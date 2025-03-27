@@ -1,0 +1,33 @@
+replicaCount: 1
+
+image:
+  # The image tag is set to "dev". The repository remains generic.
+  tag: dev
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: dev.busibeez.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: letsencrypt-prod-cert
+      hosts:
+        - dev.busibeez.com
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false

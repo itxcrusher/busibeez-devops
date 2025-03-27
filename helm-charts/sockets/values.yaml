@@ -1,0 +1,37 @@
+replicaCount: 1
+
+image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/<SERVICE_NAME>
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 4000  # Default port for socket services; override if necessary
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: placeholder.example.com   # Generic placeholder; override per environment
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: placeholder-tls
+      hosts:
+        - placeholder.example.com
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  cpuUtilizationPercentage: 80

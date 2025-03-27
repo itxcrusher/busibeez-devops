@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-api
+  namespace: argocd
+spec:
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc   # Change if deploying to a different cluster
+  project: default
+  source:
+    repoURL: https://github.com/itxcrusher/busibeez-devops.git  # Update repo URL
+    targetRevision: HEAD
+    path: helm-charts/api
+    helm:
+      valueFiles:
+        - ../../environments/dev/api-values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

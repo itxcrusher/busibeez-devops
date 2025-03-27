@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  tag: prod
+
+schedule: "0 */6 * * *"
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+configmap:
+  ENVIRONMENT: prod

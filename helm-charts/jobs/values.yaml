@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/<SERVICE_NAME>
+  tag: latest
+  pullPolicy: Always
+
+# Default schedule for the cron job (runs every 6 hours by default)
+schedule: "0 */6 * * *"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+# Optional configuration for environment variables
+configmap:
+  ENVIRONMENT: "{{ .Release.Namespace }}"

@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  tag: dev
+
+service:
+  type: ClusterIP
+  port: 4000  # Default port for socket services; override if needed
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: dev.busibeez.com
+      paths:
+        - path: /sockets
+          pathType: Prefix
+  tls:
+    - secretName: letsencrypt-prod-cert
+      hosts:
+        - dev.busibeez.com
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false

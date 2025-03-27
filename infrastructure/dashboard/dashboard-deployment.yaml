@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-dashboard
+  namespace: dashboard              # Updated namespace
+  labels:
+    k8s-app: kubernetes-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: kubernetes-dashboard
+  template:
+    metadata:
+      labels:
+        k8s-app: kubernetes-dashboard
+    spec:
+      serviceAccountName: kubernetes-dashboard
+      containers:
+      - name: kubernetes-dashboard
+        image: kubernetesui/dashboard:v2.7.0
+        ports:
+        - containerPort: 8443
+        args:
+          - --auto-generate-certificates
+        volumeMounts:
+          - name: tmp-volume
+            mountPath: /tmp
+      volumes:
+        - name: tmp-volume
+          emptyDir: {}

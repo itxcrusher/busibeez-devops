@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-sockets
+  namespace: argocd
+spec:
+  destination:
+    namespace: test
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/itxcrusher/busibeez-devops.git
+    targetRevision: HEAD
+    path: helm-charts/sockets
+    helm:
+      valueFiles:
+        - ../../environments/test/sockets-values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
