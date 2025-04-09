@@ -5,7 +5,7 @@ image:
   tag: latest
   pullPolicy: Always
 
-# Default schedule for the cron job (runs every 6 hours by default)
+# Default schedule (can override)
 schedule: "0 */6 * * *"
 
 resources:
@@ -16,6 +16,5 @@ resources:
     cpu: 250m
     memory: 256Mi
 
-# Optional configuration for environment variables
 configmap:
   ENVIRONMENT: "{{ .Release.Namespace }}"

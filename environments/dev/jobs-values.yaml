@@ -3,7 +3,6 @@ replicaCount: 1
 image:
   tag: dev
 
-# Cron schedule for the job (adjust as needed)
 schedule: "0 */6 * * *"
 
 resources:

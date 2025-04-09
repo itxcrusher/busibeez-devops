@@ -12,15 +12,10 @@ service:
 ingress:
   enabled: true
   className: nginx
-  hosts:
-    - host: placeholder.example.com
-      paths:
-        - path: /
-          pathType: Prefix
+  hosts: []  # Override in environment-specific values
   tls:
-    - secretName: placeholder-tls
-      hosts:
-        - placeholder.example.com
+    - secretName: placeholder-tls-secret
+      hosts: []
 
 resources:
   requests:

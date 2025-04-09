@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/itxcrusher/busibeez-devops.git  # Update here if needed
-    targetRevision: HEAD
-    path: argocd/applications
+    repoURL: https://github.com/itxcrusher/busibeez-devops.git
+    targetRevision: dev
+    path: argocd/applications    # The folder where child apps live
   destination:
-    server: https://kubernetes.default.svc   # Change this if deploying to an external cluster
+    server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
     automated:

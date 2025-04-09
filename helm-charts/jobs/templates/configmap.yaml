@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}-config
 data:
-  ENVIRONMENT: "{{ .Release.Namespace }}"
+  ENVIRONMENT: "{{ .Values.configmap.ENVIRONMENT }}"

@@ -1,0 +1,125 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-ingress
+  namespace: dev
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-cert"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/upgrade: "websocket"
+    nginx.ingress.kubernetes.io/proxy-http-version: "1.1"
+    nginx.ingress.kubernetes.io/proxy-connection: "upgrade"
+    nginx.ingress.kubernetes.io/client-max-body-size: "100m"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - "dev.busibeez.com"
+    secretName: dev-tls-secret
+  rules:
+    - host: "dev.busibeez.com"
+      http:
+        paths:
+          - path: /follower(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: followers-api-service
+                port:
+                  number: 5000
+          - path: /public(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: public-api-service
+                port:
+                  number: 6000
+          - path: /creli(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: creli-api-service
+                port:
+                  number: 7002
+
+          - path: /management(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: management-api-service
+                port:
+                  number: 3000
+          - path: /makeadeal(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: makeadeal-api-service
+                port:
+                  number: 7000
+          - path: /notification(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: notification-api-service
+                port:
+                  number: 7001
+          - path: /notification-socket(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: notification-socket-service
+                port:
+                  number: 4004
+          - path: /makeadeal-socket(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: makeadeal-socket-service
+                port:
+                  number: 4001
+          - path: /support(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: support-api-service
+                port:
+                  number: 8000
+          - path: /support-socket(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: support-socket-service
+                port:
+                  number: 4003
+          - path: /chat(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: chat-api-service
+                port:
+                  number: 9000
+          - path: /chat-socket(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: chat-socket-service
+                port:
+                  number: 4002
+          - path: /beekeeper(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: beekeeper-api-service
+                port:
+                  number: 7423
+          - path: /(|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 3000

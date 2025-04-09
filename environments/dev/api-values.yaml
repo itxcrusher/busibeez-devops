@@ -1,7 +1,6 @@
 replicaCount: 1
 
 image:
-  # The image tag is set to "dev". The repository remains generic.
   tag: dev
 
 service:
@@ -14,10 +13,28 @@ ingress:
   hosts:
     - host: dev.busibeez.com
       paths:
-        - path: /
-          pathType: Prefix
+        - path: /follower(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /public(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /creli(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /management(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /makeadeal(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /notification(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /support(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /chat(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /beekeeper(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /(|$)(.*)
+          pathType: ImplementationSpecific
   tls:
-    - secretName: letsencrypt-prod-cert
+    - secretName: dev-tls-secret
       hosts:
         - dev.busibeez.com
 

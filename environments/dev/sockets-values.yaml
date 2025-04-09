@@ -5,7 +5,7 @@ image:
 
 service:
   type: ClusterIP
-  port: 4000  # Default port for socket services; override if needed
+  port: 4000
 
 ingress:
   enabled: true
@@ -13,10 +13,16 @@ ingress:
   hosts:
     - host: dev.busibeez.com
       paths:
-        - path: /sockets
-          pathType: Prefix
+        - path: /notification-socket(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /makeadeal-socket(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /support-socket(/|$)(.*)
+          pathType: ImplementationSpecific
+        - path: /chat-socket(/|$)(.*)
+          pathType: ImplementationSpecific
   tls:
-    - secretName: letsencrypt-prod-cert
+    - secretName: dev-tls-secret
       hosts:
         - dev.busibeez.com
 

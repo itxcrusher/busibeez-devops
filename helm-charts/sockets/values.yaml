@@ -7,20 +7,15 @@ image:
 
 service:
   type: ClusterIP
-  port: 4000  # Default port for socket services; override if necessary
+  port: 4000  # Default for sockets
 
 ingress:
   enabled: true
   className: nginx
-  hosts:
-    - host: placeholder.example.com   # Generic placeholder; override per environment
-      paths:
-        - path: /
-          pathType: Prefix
+  hosts: []  # Override in environment-specific values
   tls:
-    - secretName: placeholder-tls
-      hosts:
-        - placeholder.example.com
+    - secretName: placeholder-tls-secret
+      hosts: []
 
 resources:
   requests:

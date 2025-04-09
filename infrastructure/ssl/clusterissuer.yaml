@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod
+  name: letsencrypt-cert
 spec:
   acme:
+    email: astutex.technology.solutions@gmail.com
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: astutex.technology.solutions@gmail.com  # Change to your contact email if needed
     privateKeySecretRef:
-      name: letsencrypt-prod
+      name: letsencrypt-cert-private-key
     solvers:
-    - http01:
-        ingress:
-          class: nginx
+      - http01:
+          ingress:
+            class: nginx

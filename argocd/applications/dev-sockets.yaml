@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: HEAD
+    targetRevision: dev
     path: helm-charts/sockets
     helm:
       valueFiles:
@@ -19,3 +19,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true  # If namespace may not exist
+      - ApplyOutOfSyncOnly=true  # Skip syncing up-to-date resources
