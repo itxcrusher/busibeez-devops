@@ -1,5 +1,7 @@
 replicaCount: 1
 
+serviceName: api
+
 image:
   tag: dev
 
