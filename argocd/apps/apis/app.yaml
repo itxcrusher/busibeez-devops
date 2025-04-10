@@ -1,17 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: busibeez-apps
+  name: api
   namespace: argocd
 spec:
-  project: default
+  project: {{ .Values.project }}
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
-    path: argocd/applications    # The folder where child apps live
+    targetRevision: {{ .Values.branch }}
+    path: helm-charts/apis
+    helm:
+      valueFiles:
+        - values/apis/app.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: {{ .Values.namespace }}
   syncPolicy:
     automated:
       prune: true

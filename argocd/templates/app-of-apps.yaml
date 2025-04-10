@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: busibeez-apps
+  namespace: argocd
+spec:
+  project: {{ .Values.project }}
+  source:
+    repoURL: https://github.com/itxcrusher/busibeez-devops.git
+    targetRevision: {{ .Values.branch }}
+    path: argocd/apps
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

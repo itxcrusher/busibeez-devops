@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ .Values.project }}
+  namespace: argocd
+spec:
+  description: Project for {{ .Values.branch }} environment
+  sourceRepos:
+    - https://github.com/itxcrusher/busibeez-devops.git
+  destinations:
+    - namespace: {{ .Values.namespace }}
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

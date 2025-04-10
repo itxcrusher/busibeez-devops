@@ -1,0 +1,6 @@
+apiVersion: v2
+name: busibeez-argocd
+description: ArgoCD root application and project chart
+type: application
+version: 0.1.0
+appVersion: "1.0"

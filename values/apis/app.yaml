@@ -5,7 +5,7 @@ image:
 
 service:
   type: ClusterIP
-  port: 4000
+  port: 3000
 
 ingress:
   enabled: true
@@ -13,13 +13,7 @@ ingress:
   hosts:
     - host: sandbox.busibeez.com
       paths:
-        - path: "/notification-socket(/|$)(.*)"
-          pathType: ImplementationSpecific
-        - path: "/makeadeal-socket(/|$)(.*)"
-          pathType: ImplementationSpecific
-        - path: "/support-socket(/|$)(.*)"
-          pathType: ImplementationSpecific
-        - path: "/chat-socket(/|$)(.*)"
+        - path: "/(|$)(.*)"
           pathType: ImplementationSpecific
   tls:
     - secretName: dev-tls-secret
