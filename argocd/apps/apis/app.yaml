@@ -11,7 +11,7 @@ spec:
     path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../../values/apis/app.yaml
+        - ../../values/apis/app.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
