@@ -9,18 +9,18 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
-  tls:
-    - hosts:
-        - dashboard.busibeez.com
-      secretName: dashboard-tls-secret
   rules:
-    - host: dashboard.busibeez.com
+    - host: kubernetes.busibeez.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: kubernetes-dashboard
+                name: kubernetes-dashboard-kong-proxy
                 port:
                   number: 443
+  tls:
+    - hosts:
+        - kubernetes.busibeez.com
+      secretName: dashboard-tls-secret

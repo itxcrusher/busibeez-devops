@@ -6,15 +6,15 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-cert"  # Set this after certificate is ready
+    cert-manager.io/cluster-issuer: "letsencrypt-cert"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - argocd.busibeez.com
+        - deployment.busibeez.com
       secretName: argocd-tls-secret
   rules:
-    - host: argocd.busibeez.com
+    - host: deployment.busibeez.com
       http:
         paths:
           - path: /

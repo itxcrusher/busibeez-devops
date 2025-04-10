@@ -9,7 +9,7 @@ spec:
     name: letsencrypt-cert
     kind: ClusterIssuer
   dnsNames:
-    - argocd.busibeez.com
+    - deployment.busibeez.com
   duration: 2160h
   renewBefore: 360h
   privateKey:

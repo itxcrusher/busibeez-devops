@@ -11,7 +11,7 @@ ingress:
   enabled: true
   className: nginx
   hosts:
-    - host: dev.busibeez.com
+    - host: sandbox.busibeez.com
       paths:
         - path: /follower(/|$)(.*)
           pathType: ImplementationSpecific
@@ -36,7 +36,7 @@ ingress:
   tls:
     - secretName: dev-tls-secret
       hosts:
-        - dev.busibeez.com
+        - sandbox.busibeez.com
 
 resources:
   requests:
