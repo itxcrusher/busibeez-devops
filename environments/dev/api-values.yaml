@@ -13,25 +13,25 @@ ingress:
   hosts:
     - host: sandbox.busibeez.com
       paths:
-        - path: /follower(/|$)(.*)
+        - path: "/follower(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /public(/|$)(.*)
+        - path: "/public(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /creli(/|$)(.*)
+        - path: "/creli(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /management(/|$)(.*)
+        - path: "/management(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /makeadeal(/|$)(.*)
+        - path: "/makeadeal(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /notification(/|$)(.*)
+        - path: "/notification(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /support(/|$)(.*)
+        - path: "/support(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /chat(/|$)(.*)
+        - path: "/chat(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /beekeeper(/|$)(.*)
+        - path: "/beekeeper(/|$)(.*)"
           pathType: ImplementationSpecific
-        - path: /(|$)(.*)
+        - path: "/(|$)(.*)"
           pathType: ImplementationSpecific
   tls:
     - secretName: dev-tls-secret
