@@ -3,7 +3,7 @@ replicaCount: 1
 serviceName: api
 
 image:
-  tag: dev
+  tag: latest
 
 service:
   type: ClusterIP
