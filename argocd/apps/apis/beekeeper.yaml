@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app
+  name: beekeeper
   namespace: argocd
 spec:
   project: dev
@@ -11,7 +11,7 @@ spec:
     path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../values/apis/app.yaml
+        - ../../values/apis/beekeeper.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
