@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Chart.Name }}-ingress
+  name: {{ .Values.serviceName | default .Chart.Name }}-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-cert"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -31,7 +31,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ $.Chart.Name }}-svc
+                name: {{ $.Values.serviceName | default $.Chart.Name }}-svc
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}
