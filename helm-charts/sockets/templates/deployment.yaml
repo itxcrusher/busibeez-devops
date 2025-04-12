@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Values.serviceName | default .Chart.Name }}
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Values.serviceName | default .Chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: {{ .Values.serviceName | default .Chart.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: {{ .Values.serviceName | default .Chart.Name }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}-container
+        - name: {{ .Values.serviceName | default .Chart.Name }}-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

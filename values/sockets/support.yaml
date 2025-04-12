@@ -23,6 +23,14 @@ ingress:
       hosts:
         - sandbox.busibeez.com
 
+env:
+  - name: SOCKET_PORT
+    value: "4003"
+  - name: PORT
+    value: "4003"
+  - name: NODE_ENV
+    value: "development"
+
 resources:
   requests:
     cpu: 25m
