@@ -9,7 +9,7 @@ image:
 
 service:
   type: ClusterIP
-  port: 9229
+  port: 3000
 
 ingress:
   enabled: true
@@ -23,6 +23,10 @@ ingress:
     - secretName: dev-tls-secret
       hosts:
         - sandbox.busibeez.com
+
+env:
+  - name: PORT
+    value: "3000"
 
 resources:
   requests:
