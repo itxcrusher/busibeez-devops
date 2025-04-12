@@ -1,13 +1,14 @@
 replicaCount: 1
 
-serviceName: api
+serviceName: support-socket
 
 image:
   tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP
-  port: 9229
+  port: 4003
 
 ingress:
   enabled: true
@@ -15,7 +16,7 @@ ingress:
   hosts:
     - host: sandbox.busibeez.com
       paths:
-        - path: "/(|$)(.*)"
+        - path: "/support-socket(|$)(.*)"
           pathType: ImplementationSpecific
   tls:
     - secretName: dev-tls-secret
