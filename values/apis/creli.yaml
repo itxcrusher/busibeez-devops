@@ -3,7 +3,9 @@ replicaCount: 1
 serviceName: creli
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/creli
   tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP

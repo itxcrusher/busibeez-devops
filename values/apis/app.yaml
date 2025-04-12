@@ -3,7 +3,9 @@ replicaCount: 1
 serviceName: api
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/api
   tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP

@@ -3,6 +3,7 @@ replicaCount: 1
 serviceName: notification-socket
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/notification-socket
   tag: latest
   pullPolicy: Always
 

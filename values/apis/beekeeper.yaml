@@ -3,7 +3,9 @@ replicaCount: 1
 serviceName: beekeeper
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/beekeeper
   tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP

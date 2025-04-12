@@ -3,7 +3,9 @@ replicaCount: 1
 serviceName: followers
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/followers
   tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP

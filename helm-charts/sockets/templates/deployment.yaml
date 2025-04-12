@@ -24,6 +24,6 @@ spec:
             - name: SOCKET_PORT
               value: "{{ .Values.service.port }}"
           resources:
-{{ toYaml .Values.resources | indent 10 }}
+{{ toYaml .Values.resources | indent 12 }}
       imagePullSecrets:
         - name: gitlab-registry

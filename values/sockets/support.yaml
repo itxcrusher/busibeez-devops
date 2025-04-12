@@ -3,6 +3,7 @@ replicaCount: 1
 serviceName: support-socket
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/support-socket
   tag: latest
   pullPolicy: Always
 

@@ -3,6 +3,7 @@ replicaCount: 1
 serviceName: makeadeal-socket
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/makeadeal-socket
   tag: latest
   pullPolicy: Always
 

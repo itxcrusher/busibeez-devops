@@ -3,6 +3,7 @@ replicaCount: 1
 serviceName: chat-socket
 
 image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest/chat-socket
   tag: latest
   pullPolicy: Always
 
