@@ -34,7 +34,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ $.Values.serviceName | default .Chart.Name }}-svc
+                name: {{ $.Values.serviceName | default $.Chart.Name }}-svc
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}
