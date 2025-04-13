@@ -33,6 +33,5 @@ spec:
                 name: {{ $.Values.serviceName }}-svc
                 port:
                   number: {{ $.Values.service.port }}
-          {{- end }}
     {{- end }}
 {{- end }}
