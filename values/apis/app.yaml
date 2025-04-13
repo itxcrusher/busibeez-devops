@@ -3,6 +3,13 @@ serviceName: api
 service:
   port: 3000
 
+ingress:
+  hosts:
+    - host: sandbox.busibeez.com
+      paths:
+        - path: "/(|$)(.*)"
+          pathType: ImplementationSpecific
+
 env:
   - name: PORT
     value: "3000"
