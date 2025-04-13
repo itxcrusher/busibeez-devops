@@ -1,0 +1,4 @@
+apiVersion: v2
+name: socket
+version: 1.0.0
+description: Helm chart for BusiBeez Sockets

@@ -1,0 +1,8 @@
+serviceName: notification-socket
+
+service:
+  port: 4004
+
+env:
+  - name: PORT
+    value: "4004"

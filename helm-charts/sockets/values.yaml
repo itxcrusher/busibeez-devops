@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: sandbox.busibeez.com
+  tls:
+    - secretName: dev-tls-secret
+      hosts:
+        - sandbox.busibeez.com
+
+# resources: {}
+
+env: []

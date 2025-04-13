@@ -1,0 +1,8 @@
+serviceName: support-socket
+
+service:
+  port: 4003
+
+env:
+  - name: PORT
+    value: "4003"

@@ -1,0 +1,8 @@
+serviceName: makeadeal-socket
+
+service:
+  port: 4001
+
+env:
+  - name: PORT
+    value: "4001"
