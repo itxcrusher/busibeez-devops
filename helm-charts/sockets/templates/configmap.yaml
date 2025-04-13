@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Values.serviceName | default .Chart.Name }}-config
-data:
-  ENVIRONMENT: dev

@@ -1,24 +1,21 @@
-{{- range .Values.socketApps }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .name }}-socket
+  name: beekeeper
   namespace: argocd
 spec:
-  project: {{ $.Values.project }}
+  project: dev
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: {{ $.Values.branch }}
-    path: helm-charts/sockets
+    targetRevision: dev
+    path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../values/sockets/{{ .name }}.yaml
+        - ../../values/apis/beekeeper.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ $.Values.namespace }}
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
----
-{{- end }}
