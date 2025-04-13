@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.serviceName | default .Chart.Name }}-svc
+  name: {{ .Values.serviceName }}-svc
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: {{ .Values.serviceName | default .Chart.Name }}
+    app: {{ .Values.serviceName }}
   ports:
-  - protocol: TCP
-    port: {{ .Values.service.port }}
-    targetPort: {{ .Values.service.port }}
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}

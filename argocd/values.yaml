@@ -1,3 +1,25 @@
 project: dev
 branch: dev
 namespace: dev
+repoURL: https://github.com/itxcrusher/busibeez-devops.git
+
+apiApps:
+  - name: api
+  - name: beekeeper
+  - name: chat
+  - name: creli
+  - name: followers
+  - name: makeadeal
+  - name: management
+  - name: notification
+  - name: public
+  - name: support
+
+# socketApps:
+#   - name: chat
+#   - name: makeadeal
+#   - name: notification
+#   - name: support
+
+# jobApps:
+#   - name: promotions

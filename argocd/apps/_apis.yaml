@@ -1,21 +1,24 @@
+{{- range .Values.apiApps }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: support-socket
+  name: {{ .name }}
   namespace: argocd
 spec:
-  project: dev
+  project: {{ $.Values.project }}
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
-    path: helm-charts/sockets
+    targetRevision: {{ $.Values.branch }}
+    path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../values/sockets/support.yaml
+        - ../../values/apis/{{ .name }}.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: {{ $.Values.namespace }}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+---
+{{- end }}

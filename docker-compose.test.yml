@@ -1,7 +1,52 @@
 version: "3.8"
 
 services:
-  app:
+  api:
     image: registry.gitlab.com/astutexdevops/bb-latest/api:latest
     ports:
       - "3000:3000"
+
+  beekeeper:
+    image: registry.gitlab.com/astutexdevops/bb-latest/beekeeper:latest
+    ports:
+      - "7423:7423"
+
+  chat:
+    image: registry.gitlab.com/astutexdevops/bb-latest/chat:latest
+    ports:
+      - "9000:9000"
+
+  creli:
+    image: registry.gitlab.com/astutexdevops/bb-latest/creli:latest
+    ports:
+      - "5010:7000"
+
+  followers:
+    image: registry.gitlab.com/astutexdevops/bb-latest/followers:latest
+    ports:
+      - "5000:5000"
+
+  makeadeal:
+    image: registry.gitlab.com/astutexdevops/bb-latest/makeadeal:latest
+    ports:
+      - "7000:7000"
+
+  management:
+    image: registry.gitlab.com/astutexdevops/bb-latest/management:latest
+    ports:
+      - "3001:7000"
+
+  notification:
+    image: registry.gitlab.com/astutexdevops/bb-latest/notification:latest
+    ports:
+      - "7001:7001"
+
+  public:
+    image: registry.gitlab.com/astutexdevops/bb-latest/public:latest
+    ports:
+      - "6010:6000"
+
+  support:
+    image: registry.gitlab.com/astutexdevops/bb-latest/support:latest
+    ports:
+      - "8000:8000"

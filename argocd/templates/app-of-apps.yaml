@@ -6,7 +6,7 @@ metadata:
 spec:
   project: {{ .Values.project }}
   source:
-    repoURL: https://github.com/itxcrusher/busibeez-devops.git
+    repoURL: {{ .Values.repoURL }}
     targetRevision: {{ .Values.branch }}
     path: argocd/apps
     directory:

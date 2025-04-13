@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Project for {{ .Values.branch }} environment
   sourceRepos:
-    - https://github.com/itxcrusher/busibeez-devops.git
+    - {{ .Values.repoURL }}
   destinations:
     - namespace: {{ .Values.namespace }}
       server: https://kubernetes.default.svc

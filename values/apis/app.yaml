@@ -1,40 +1,8 @@
-replicaCount: 1
-
 serviceName: api
 
-image:
-  repository: registry.gitlab.com/astutexdevops/bb-latest/api
-  tag: latest
-  pullPolicy: Always
-
 service:
-  type: ClusterIP
   port: 3000
-
-ingress:
-  enabled: true
-  className: nginx
-  hosts:
-    - host: sandbox.busibeez.com
-      paths:
-        - path: "/(|$)(.*)"
-          pathType: ImplementationSpecific
-  tls:
-    - secretName: dev-tls-secret
-      hosts:
-        - sandbox.busibeez.com
 
 env:
   - name: PORT
     value: "3000"
-
-resources:
-  requests:
-    cpu: 25m
-    memory: 64Mi
-  limits:
-    cpu: 100m
-    memory: 128Mi
-
-autoscaling:
-  enabled: false

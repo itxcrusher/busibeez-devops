@@ -1,29 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.serviceName | default .Chart.Name }}
+  name: {{ .Values.serviceName }}
   labels:
-    app: {{ .Values.serviceName | default .Chart.Name }}
+    app: {{ .Values.serviceName }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.serviceName | default .Chart.Name }}
+      app: {{ .Values.serviceName }}
   template:
     metadata:
       labels:
-        app: {{ .Values.serviceName | default .Chart.Name }}
+        app: {{ .Values.serviceName }}
     spec:
       containers:
-        - name: {{ .Values.serviceName | default .Chart.Name }}-container
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        - name: {{ .Values.serviceName }}-container
+          image: "{{ .Values.image.repository }}/{{ .Values.serviceName}}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
           env:
             {{- range .Values.env }}
             - name: {{ .name }}
+              {{- if .value }}
               value: "{{ .value }}"
+              {{- else if .valueFrom }}
+              valueFrom:
+                fieldRef:
+                  fieldPath: {{ .valueFrom.fieldPath }}
+              {{- end }}
             {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

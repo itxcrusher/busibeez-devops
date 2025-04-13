@@ -1,36 +1,8 @@
-replicaCount: 1
-
 serviceName: notification
 
-image:
-  repository: registry.gitlab.com/astutexdevops/bb-latest/notification
-  tag: latest
-  pullPolicy: Always
-
 service:
-  type: ClusterIP
   port: 7001
 
-ingress:
-  enabled: true
-  className: nginx
-  hosts:
-    - host: sandbox.busibeez.com
-      paths:
-        - path: "/notification(|$)(.*)"
-          pathType: ImplementationSpecific
-  tls:
-    - secretName: dev-tls-secret
-      hosts:
-        - sandbox.busibeez.com
-
-resources:
-  requests:
-    cpu: 25m
-    memory: 64Mi
-  limits:
-    cpu: 100m
-    memory: 128Mi
-
-autoscaling:
-  enabled: false
+env:
+  - name: PORT
+    value: "7001"
