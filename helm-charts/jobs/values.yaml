@@ -1,0 +1,6 @@
+image:
+  repository: registry.gitlab.com/astutexdevops/bb-latest
+  tag: dev
+  pullPolicy: Always
+
+env: []

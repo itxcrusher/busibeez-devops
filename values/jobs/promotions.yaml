@@ -1,0 +1,11 @@
+serviceName: promotions-job
+
+env:
+  - name: DB_URL
+    value: mongodb+srv://bb-application:jkaGIhvoShxffitf@bb-cluster.wrabc8j.mongodb.net/busibeez?retryWrites=true&w=majority
+  - name: TIMEZONE
+    value: Asia/Singapore
+  - name: MONGODB_URI
+    value: mongodb+srv://exdrsemp10004anisha:2U8n4xw7HxrqVGDA@cluster0.1v8l0.mongodb.net/bb-logger?retryWrites=true&w=majority
+  - name: NOTIFICATION_URL
+    value: http://dev-1-api.busibeez.com/notification/api/

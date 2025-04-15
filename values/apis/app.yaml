@@ -1,4 +1,4 @@
-serviceName: api
+serviceName: app
 
 service:
   port: 3000
