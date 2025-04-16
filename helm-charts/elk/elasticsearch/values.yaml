@@ -1,3 +1,20 @@
 # Required for Helm/ArgoCD resolution, even if empty.
 service:
   type: ClusterIP
+
+replicaCount: 1
+
+volumePermissions:
+  enabled: true
+
+persistence:
+  enabled: true
+  size: 5Gi
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
