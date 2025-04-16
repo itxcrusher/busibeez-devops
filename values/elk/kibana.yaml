@@ -6,9 +6,8 @@ elasticsearch:
     - http://elasticsearch:9200
 
 kibana:
-  kibana:
-    image:
-      enabled: true
+  image:
+    enabled: true
   ingress:
     enabled: true
     hostname: logs-dev.busibeez.com
