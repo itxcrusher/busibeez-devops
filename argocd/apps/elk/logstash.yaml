@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logstash
+  namespace: argocd
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/BusiBeez/busibeez-devops.git
+    targetRevision: dev
+    path: helm-charts/elk/logstash
+    helm:
+      valueFiles:
+        - ../../values/elk/logstash.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

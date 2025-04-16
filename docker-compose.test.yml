@@ -1,86 +1,82 @@
 services:
   ###################################### ---------- APIs ---------- ######################################
-  # api:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/api:latest
-  #   ports:
-  #     - "3000:3000"
+  api:
+    image: registry.gitlab.com/astutexdevops/bb-latest/api:latest
+    ports:
+      - "3000:3000"
 
-  # beekeeper:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/beekeeper:latest
-  #   ports:
-  #     - "7423:7423"
+  beekeeper:
+    image: registry.gitlab.com/astutexdevops/bb-latest/beekeeper:latest
+    ports:
+      - "7423:7423"
 
-  # chat:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/chat:latest
-  #   ports:
-  #     - "9000:9000"
+  chat:
+    image: registry.gitlab.com/astutexdevops/bb-latest/chat:latest
+    ports:
+      - "9000:9000"
 
-  # creli:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/creli:latest
-  #   ports:
-  #     - "5010:7000"
+  creli:
+    image: registry.gitlab.com/astutexdevops/bb-latest/creli:latest
+    ports:
+      - "5010:7000"
 
-  # followers:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/followers:latest
-  #   ports:
-  #     - "5000:5000"
+  followers:
+    image: registry.gitlab.com/astutexdevops/bb-latest/followers:latest
+    ports:
+      - "5000:5000"
 
-  # makeadeal:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/makeadeal:latest
-  #   ports:
-  #     - "7000:7000"
+  makeadeal:
+    image: registry.gitlab.com/astutexdevops/bb-latest/makeadeal:latest
+    ports:
+      - "7000:7000"
 
-  # management:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/management:latest
-  #   ports:
-  #     - "3001:7000"
+  management:
+    image: registry.gitlab.com/astutexdevops/bb-latest/management:latest
+    ports:
+      - "3001:7000"
 
-  # notification:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/notification:latest
-  #   ports:
-  #     - "7001:7001"
+  notification:
+    image: registry.gitlab.com/astutexdevops/bb-latest/notification:latest
+    ports:
+      - "7001:7001"
 
-  # public:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/public:latest
-  #   ports:
-  #     - "6010:6000"
+  public:
+    image: registry.gitlab.com/astutexdevops/bb-latest/public:latest
+    ports:
+      - "6010:6000"
 
-  # support:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/support:latest
-  #   ports:
-  #     - "8000:8000"
+  support:
+    image: registry.gitlab.com/astutexdevops/bb-latest/support:latest
+    ports:
+      - "8000:8000"
   
-  ###################################### ---------- Sockets ---------- ######################################
-  # makeadeal-socket:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/makeadeal-socket:latest
-  #   ports:
-  #     - "4001:4001"
+  ##################################### ---------- Sockets ---------- ######################################
+  makeadeal-socket:
+    image: registry.gitlab.com/astutexdevops/bb-latest/makeadeal-socket:latest
+    ports:
+      - "4001:4001"
   
-  # chat-socket:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/chat-socket:latest
-  #   ports:
-  #     - "4002:5000"
+  chat-socket:
+    image: registry.gitlab.com/astutexdevops/bb-latest/chat-socket:latest
+    ports:
+      - "4002:5000"
 
-  # support-socket:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/support-socket:latest
-  #   ports:
-  #     - "4003:4003"
+  support-socket:
+    image: registry.gitlab.com/astutexdevops/bb-latest/support-socket:latest
+    ports:
+      - "4003:4003"
 
-  # notification-socket:
-  #   image: registry.gitlab.com/astutexdevops/bb-latest/notification-socket:latest
-  #   ports:
-  #     - "4004:4004"
+  notification-socket:
+    image: registry.gitlab.com/astutexdevops/bb-latest/notification-socket:latest
+    ports:
+      - "4004:4004"
 
   ###################################### ---------- Jobs ---------- ######################################
   logger-job:
     image: registry.gitlab.com/astutexdevops/bb-latest/logger-job:latest
-    ports:
-      - "4001:4001"
+
   notification-job:
     image: registry.gitlab.com/astutexdevops/bb-latest/notification-job:latest
-    ports:
-      - "4001:4001"
-  promotion-job:
-    image: registry.gitlab.com/astutexdevops/bb-latest/promotion-job:latest
-    ports:
-      - "4001:4001"
+
+  promotions-job:
+    image: registry.gitlab.com/astutexdevops/bb-latest/promotions-job:latest
