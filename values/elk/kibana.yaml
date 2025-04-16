@@ -2,9 +2,6 @@ elasticsearch:
   hosts:
     - http://elasticsearch:9200
 
-service:
-  type: ClusterIP
-
 ingress:
   enabled: true
   className: nginx

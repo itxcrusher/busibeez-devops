@@ -1,1 +1,3 @@
 # Required for Helm/ArgoCD resolution, even if empty.
+service:
+  type: ClusterIP
