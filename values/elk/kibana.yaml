@@ -8,7 +8,7 @@ elasticsearch:
 kibana:
   ingress:
     enabled: true
-    className: nginx
+    ingressClassName: nginx
     hostname: logs-dev.busibeez.com
     path: /
     tls: true

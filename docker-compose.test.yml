@@ -1,6 +1,6 @@
 services:
   ###################################### ---------- APIs ---------- ######################################
-  api:
+  app:
     image: registry.gitlab.com/astutexdevops/bb-latest/api:latest
     ports:
       - "3000:3000"
