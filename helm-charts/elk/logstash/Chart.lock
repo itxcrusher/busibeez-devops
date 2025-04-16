@@ -1,0 +1,6 @@
+dependencies:
+- name: logstash
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.4.7
+digest: sha256:83a946e5700adbe853f88312be4b1ab04a2decc1cc4ae85c5bbdf5d7ce59b70e
+generated: "2025-04-16T09:07:39.2189675-04:00"
