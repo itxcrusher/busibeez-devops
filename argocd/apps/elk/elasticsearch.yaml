@@ -11,7 +11,7 @@ spec:
     path: helm-charts/elk/elasticsearch
     helm:
       valueFiles:
-        - ../../values/elk/elasticsearch.yaml
+        - ../../../values/elk/elasticsearch.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

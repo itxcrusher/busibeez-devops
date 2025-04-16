@@ -11,7 +11,7 @@ spec:
     path: helm-charts/elk/logstash
     helm:
       valueFiles:
-        - ../../values/elk/logstash.yaml
+        - ../../../values/elk/logstash.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

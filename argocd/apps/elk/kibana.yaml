@@ -11,7 +11,7 @@ spec:
     path: helm-charts/elk/kibana
     helm:
       valueFiles:
-        - ../../values/elk/kibana.yaml
+        - ../../../values/elk/kibana.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
