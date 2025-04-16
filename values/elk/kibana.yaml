@@ -6,13 +6,14 @@ elasticsearch:
     - http://elasticsearch:9200
 
 kibana:
+  enabled: true
   ingress:
     enabled: true
     hostname: logs-dev.busibeez.com
     path: /
     tls: true
     secretName: kibana-tls-secret
-    ingressClassName: nginx  # keep this
+    ingressClassName: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-cert
       nginx.ingress.kubernetes.io/rewrite-target: /
