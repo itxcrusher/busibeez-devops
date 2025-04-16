@@ -1,1 +1,5 @@
 serviceName: notification-job
+
+env:
+  - name: DB_URL
+    value: mongodb+srv://bb-application:jkaGIhvoShxffitf@bb-cluster.wrabc8j.mongodb.net/busibeez?retryWrites=true&w=majority

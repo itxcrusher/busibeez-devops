@@ -1,6 +1,31 @@
+replicaCount: 1
+
 image:
   repository: registry.gitlab.com/astutexdevops/bb-latest
   tag: dev
   pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3000  # Placeholder (required by template even if unused)
+
+# Jobs do not need ingress, but including it disables it cleanly
+ingress:
+  enabled: false
+  className: nginx
+  hosts:
+    - host: sandbox.busibeez.com
+  tls:
+    - secretName: dev-tls-secret
+      hosts:
+        - sandbox.busibeez.com
+
+# resources:
+#   requests:
+#     cpu: "100m"
+#     memory: "128Mi"
+#   limits:
+#     cpu: "200m"
+#     memory: "256Mi"
 
 env: []

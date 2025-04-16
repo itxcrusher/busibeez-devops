@@ -1,6 +1,5 @@
 apiVersion: v2
 name: jobs
-version: 1.0.0
-description: Helm chart for BusiBeez jobs
-type: application
+description: Helm chart for job-based Node.js services
+version: 0.1.0
 appVersion: "1.0"
