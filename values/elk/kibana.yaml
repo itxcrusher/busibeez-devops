@@ -7,6 +7,8 @@ elasticsearch:
 
 kibana:
   enabled: true
+  image:
+    enabled: true
   ingress:
     enabled: true
     hostname: logs-dev.busibeez.com
