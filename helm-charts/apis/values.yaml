@@ -18,13 +18,13 @@ ingress:
       hosts:
         - sandbox.busibeez.com
 
-resources:
-  requests:
-    cpu: 250m
-    memory: 256Mi
-  limits:
-    cpu: 500m
-    memory: 512Mi
+# resources:
+#   requests:
+#     cpu: 250m
+#     memory: 256Mi
+#   limits:
+#     cpu: 500m
+#     memory: 512Mi
 
 autoscaling:
   enabled: false
