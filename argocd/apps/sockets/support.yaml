@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: support-socket
+  namespace: argocd
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/itxcrusher/busibeez-devops.git
+    targetRevision: dev
+    path: helm-charts/sockets
+    helm:
+      valueFiles:
+        - ../../values/sockets/support.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
