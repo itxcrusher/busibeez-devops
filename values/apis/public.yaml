@@ -1,5 +1,8 @@
 serviceName: public
 
+image:
+  tag: dev
+
 service:
   port: 6000
 

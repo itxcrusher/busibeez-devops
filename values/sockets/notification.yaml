@@ -1,5 +1,8 @@
 serviceName: notification-socket
 
+image:
+  tag: dev
+
 service:
   port: 4004
 

@@ -1,5 +1,8 @@
 serviceName: followers
 
+image:
+  tag: dev
+
 service:
   port: 5000
 

@@ -1,5 +1,8 @@
 serviceName: makeadeal-socket
 
+image:
+  tag: dev
+
 service:
   port: 4001
 

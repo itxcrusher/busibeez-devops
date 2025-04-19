@@ -1,5 +1,8 @@
 serviceName: logger-job
 
+image:
+  tag: dev
+
 env:
   - name: DB_URL
     value: mongodb+srv://exdrsemp10004anisha:2U8n4xw7HxrqVGDA@cluster0.1v8l0.mongodb.net/bb-logger?retryWrites=true&w=majority

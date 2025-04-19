@@ -1,5 +1,8 @@
 serviceName: notification
 
+image:
+  tag: dev
+
 service:
   port: 7001
 

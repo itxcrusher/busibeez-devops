@@ -1,5 +1,8 @@
 serviceName: chat
 
+image:
+  tag: dev
+
 service:
   port: 9000
 
