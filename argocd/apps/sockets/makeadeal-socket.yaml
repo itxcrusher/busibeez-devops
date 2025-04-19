@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: support-socket
+  name: makeadeal-socket
   namespace: argocd
 spec:
   project: dev
@@ -11,7 +11,7 @@ spec:
     path: helm-charts/sockets
     helm:
       valueFiles:
-        - ../../values/sockets/support.yaml
+        - ../../values/sockets/makeadeal-socket.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: logger-job
+  name: promotions-job
   namespace: argocd
 spec:
   project: dev
@@ -11,7 +11,7 @@ spec:
     path: helm-charts/jobs
     helm:
       valueFiles:
-        - ../../values/jobs/logger.yaml
+        - ../../values/jobs/promotions-job.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

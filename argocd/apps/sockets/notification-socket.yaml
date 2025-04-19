@@ -11,7 +11,7 @@ spec:
     path: helm-charts/sockets
     helm:
       valueFiles:
-        - ../../values/sockets/notification.yaml
+        - ../../values/sockets/notification-socket.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

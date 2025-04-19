@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: notification-job
+  name: chat-socket
   namespace: argocd
 spec:
   project: dev
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
     targetRevision: dev
-    path: helm-charts/jobs
+    path: helm-charts/sockets
     helm:
       valueFiles:
-        - ../../values/jobs/notification.yaml
+        - ../../values/sockets/chat-socket.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
