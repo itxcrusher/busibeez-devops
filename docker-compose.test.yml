@@ -35,11 +35,6 @@ services:
     ports:
       - "3001:7000"
 
-  notification:
-    image: registry.gitlab.com/astutexdevops/bb-latest/notification:latest
-    ports:
-      - "7001:7001"
-
   public:
     image: registry.gitlab.com/astutexdevops/bb-latest/public:latest
     ports:
@@ -49,6 +44,11 @@ services:
     image: registry.gitlab.com/astutexdevops/bb-latest/support:latest
     ports:
       - "8000:8000"
+
+  notification:
+    image: registry.gitlab.com/astutexdevops/bb-latest/notification:latest
+    ports:
+      - "7001:7001"
   
   ##################################### ---------- Sockets ---------- ######################################
   makeadeal-socket:
