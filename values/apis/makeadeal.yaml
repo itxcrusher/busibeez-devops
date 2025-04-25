@@ -1,7 +1,7 @@
 serviceName: makeadeal
 
 image:
-  tag: 2d9ed35
+  tag: 4964afa
 
 service:
   port: 7000
