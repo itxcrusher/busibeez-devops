@@ -1,7 +1,7 @@
 serviceName: makeadeal-socket
 
 image:
-  tag: 05c7ad8
+  tag: 31d708b
 
 service:
   port: 4001
