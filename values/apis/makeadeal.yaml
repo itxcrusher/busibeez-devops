@@ -1,7 +1,7 @@
 serviceName: makeadeal
 
 image:
-  tag: 41e4e0b
+  tag: 6cfaadb
 
 service:
   port: 7000

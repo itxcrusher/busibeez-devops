@@ -1,7 +1,7 @@
 serviceName: management
 
 image:
-  tag: 8a1ab5e
+  tag: 6cfaadb
 
 service:
   port: 7000
