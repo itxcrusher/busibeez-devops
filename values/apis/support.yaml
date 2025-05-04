@@ -1,7 +1,7 @@
 serviceName: support
 
 image:
-  tag: 6cfaadb
+  tag: c19510d
 
 service:
   port: 8000
