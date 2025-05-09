@@ -1,7 +1,7 @@
 serviceName: notification-socket
 
 image:
-  tag: 239501a
+  tag: cb77c90
 
 service:
   port: 4004
