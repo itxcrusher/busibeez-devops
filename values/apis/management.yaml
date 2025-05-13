@@ -1,7 +1,7 @@
 serviceName: management
 
 image:
-  tag: cb77c90
+  tag: b314815
 
 service:
   port: 7000
