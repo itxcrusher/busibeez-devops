@@ -1,7 +1,7 @@
 serviceName: creli
 
 image:
-  tag: 0ecd55b
+  tag: c81e56b
 
 service:
   port: 7000
