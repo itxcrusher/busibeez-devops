@@ -1,7 +1,7 @@
 serviceName: notification
 
 image:
-  tag: 8a1ab5e
+  tag: da51086
 
 service:
   port: 7001
