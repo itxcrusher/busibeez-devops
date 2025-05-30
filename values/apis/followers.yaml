@@ -1,7 +1,7 @@
 serviceName: followers
 
 image:
-  tag: dcb83a0
+  tag: be5707a
 
 service:
   port: 5000
