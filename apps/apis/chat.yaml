@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chat-socket
+  name: chat
   namespace: argocd
 spec:
-  project: dev
+  project: prod
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
-    path: helm-charts/sockets
+    targetRevision: main
+    path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../values/sockets/chat-socket.yaml
+        - ../../values/apis/chat.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

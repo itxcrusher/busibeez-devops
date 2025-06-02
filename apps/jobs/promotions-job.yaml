@@ -4,17 +4,17 @@ metadata:
   name: promotions-job
   namespace: argocd
 spec:
-  project: dev
+  project: prod
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
+    targetRevision: main
     path: helm-charts/jobs
     helm:
       valueFiles:
         - ../../values/jobs/promotions-job.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

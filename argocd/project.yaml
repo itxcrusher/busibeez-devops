@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: dev
+  name: prod
   namespace: argocd
 spec:
-  description: Project for dev environment
+  description: Project for prod environment
   sourceRepos:
     - https://github.com/itxcrusher/busibeez-devops.git
   destinations:
-    - namespace: dev
+    - namespace: prod
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc

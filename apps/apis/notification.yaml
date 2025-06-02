@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: notification-job
+  name: notification
   namespace: argocd
 spec:
-  project: dev
+  project: prod
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
-    path: helm-charts/jobs
+    targetRevision: main
+    path: helm-charts/apis
     helm:
       valueFiles:
-        - ../../values/jobs/notification-job.yaml
+        - ../../values/apis/notification.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

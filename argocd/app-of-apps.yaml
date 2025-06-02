@@ -4,10 +4,10 @@ metadata:
   name: busibeez-apps
   namespace: argocd
 spec:
-  project: dev
+  project: prod
   source:
     repoURL: https://github.com/itxcrusher/busibeez-devops.git
-    targetRevision: dev
+    targetRevision: main
     path: argocd/apps
     directory:
       recurse: true

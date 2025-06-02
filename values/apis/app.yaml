@@ -1,7 +1,7 @@
 serviceName: app
 
 image:
-  tag: dev
+  tag: "dev"
 
 service:
   port: 3000
