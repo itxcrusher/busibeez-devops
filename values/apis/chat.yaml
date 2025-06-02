@@ -1,7 +1,7 @@
 serviceName: chat
 
 image:
-  tag: ed2e28f
+  tag: "9eebe91"
 
 service:
   port: 9000
