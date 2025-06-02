@@ -1,7 +1,7 @@
 serviceName: support
 
 image:
-  tag: dev
+  tag: 478e105
 
 service:
   port: 8000
