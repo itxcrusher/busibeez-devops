@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: promotions-job
+  name: promotions-job-prod
   namespace: argocd
 spec:
   project: prod

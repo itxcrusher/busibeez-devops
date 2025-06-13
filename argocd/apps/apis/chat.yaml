@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chat
+  name: chat-prod
   namespace: argocd
 spec:
   project: prod

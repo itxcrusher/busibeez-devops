@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: followers
+  name: followers-prod
   namespace: argocd
 spec:
   project: prod

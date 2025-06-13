@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: support-socket
+  name: support-socket-prod
   namespace: argocd
 spec:
   project: prod

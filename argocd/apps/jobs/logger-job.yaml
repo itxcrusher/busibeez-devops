@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: logger-job
+  name: logger-job-prod
   namespace: argocd
 spec:
   project: prod
