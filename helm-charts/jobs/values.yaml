@@ -14,11 +14,11 @@ ingress:
   enabled: false
   className: nginx
   hosts:
-    - host: production.busibeez.com
+    - host: hive.busibeez.com
   tls:
     - secretName: prod-tls-secret
       hosts:
-        - production.busibeez.com
+        - hive.busibeez.com
 
 # resources:
 #   requests:
