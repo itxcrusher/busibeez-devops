@@ -1,7 +1,7 @@
 serviceName: notification-job
 
 image:
-  tag: "1f5f798"
+  tag: "f0a137e"
 
 env:
   - name: DB_URL

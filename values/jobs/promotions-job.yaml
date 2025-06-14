@@ -1,7 +1,7 @@
 serviceName: promotions-job
 
 image:
-  tag: "28da978"
+  tag: "f0a137e"
 
 env:
   - name: DB_URL
