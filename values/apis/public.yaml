@@ -1,7 +1,7 @@
 serviceName: public
 
 image:
-  tag: "b32548e"
+  tag: "9000370"
 
 service:
   port: 6000

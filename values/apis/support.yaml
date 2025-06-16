@@ -1,7 +1,7 @@
 serviceName: support
 
 image:
-  tag: "28da978"
+  tag: "9000370"
 
 service:
   port: 8000
