@@ -1,7 +1,7 @@
 serviceName: beekeeper
 
 image:
-  tag: "2839a1c"
+  tag: "9000370"
 
 service:
   port: 7423

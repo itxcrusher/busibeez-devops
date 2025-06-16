@@ -1,7 +1,7 @@
 serviceName: logger-job
 
 image:
-  tag: "da51086"
+  tag: "9eebe91"
 
 env:
   - name: DB_URL
