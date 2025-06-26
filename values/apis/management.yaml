@@ -1,7 +1,7 @@
 serviceName: management
 
 image:
-  tag: "586b765"
+  tag: "8d71bb8"
 
 service:
   port: 7000
