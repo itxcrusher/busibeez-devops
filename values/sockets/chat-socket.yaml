@@ -1,7 +1,7 @@
 serviceName: chat-socket
 
 image:
-  tag: "df46801"
+  tag: "e60204d"
 
 service:
   port: 5000
