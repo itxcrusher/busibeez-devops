@@ -1,7 +1,7 @@
 serviceName: public
 
 image:
-  tag: "dc44780"
+  tag: "baffdcc"
 
 service:
   port: 6000
