@@ -1,4 +1,4 @@
-# 🚀 Busibeez DevOps Repository
+# Complete GitOps Implementation Repository
 
 Infrastructure automation and configuration repository for Busibeez, including Kubernetes manifests, Helm charts, CI/CD pipelines, monitoring, logging, and ArgoCD GitOps workflows.
 
